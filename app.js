@@ -33,14 +33,15 @@ app.use(bodyParser.urlencoded({ extended: false }));
 var queue = new Queue(incomingNotifications, function(data, progress, resolve, reject) {
 
     // Extract data from queue object
-    var incomingNotification = data;
-    var notifierID = incomingNotification.notifierID;
-    var notifieeID = incomingNotification.notifieeID;
+    var now = new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '')+" +0000";
     var nofifierName = incomingNotification.nofifierName;
     var notifieeName = incomingNotification.notifieeName;
-    var now = new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '')+" +0000";
-    var notificationCount = 0
-    var alreadyNotified = false
+    var notifierID = incomingNotification.notifierID;
+    var notifieeID = incomingNotification.notifieeID;
+    var incomingNotification = data;
+    var alreadyNotified = false;
+    var notificationCount = 0;
+    
 
     // Get current list of notifcations for user and identify which ones they have seen by the key "Viewed"
     userNotifications.child(notifieeID).once("value").then(function(snapshot) {
