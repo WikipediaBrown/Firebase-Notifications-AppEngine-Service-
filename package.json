@@ -1,0 +1,24 @@
+{
+  "name": "notificationsservice",
+  "description": "Notifications service.",
+  "version": "0.0.3",
+  "private": true,
+  "license": "MIT",
+  "author": "Perris Davis",
+  "engines": {
+    "node": "~4.2"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "monitor": "nodemon app.js",
+    "deploy": "gcloud app deploy"
+  },
+  "dependencies": {
+    "body-parser": "~1.13.2",
+    "express": "^4.13.4",
+    "firebase-admin": "^4.0.2",
+    "firebase-queue": "^1.6.0",
+    "request": "^2.78.0",
+    "request-promise": "^4.1.1"
+  }
+}
