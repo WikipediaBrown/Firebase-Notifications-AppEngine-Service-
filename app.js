@@ -1,3 +1,5 @@
+// This service is somewhat obsolete. The current version of Firebase-Admin accomodates sending notifications through
+// the library. That said, there are reasons that users would not want to upgrade and for them, there's this.
 // [START notificationsservice app]
 'use strict';
 
